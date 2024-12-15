@@ -1,0 +1,52 @@
+<div class="widget-popup">
+  <div class="widget-title">{{widget.name}}</div>
+  
+  <div class="sensor-info">
+    <div class="temperature">
+      <i class="bi bi-thermometer-half"></i>
+      <span>{{widget.temperature}}°C</span>
+    </div>
+    <div class="humidity">
+      <i class="bi bi-droplet-half"></i>
+      <span>%{{widget.humidity}}</span>
+    </div>
+  </div>
+
+  <div class="adjustment-buttons">
+    <button class="update" (click)="toggleTemperatureInput()">Sıcaklık Ayarla</button>
+    <button class="update" (click)="toggleHumidityInput()">Nem Ayarla</button>
+  </div>
+
+  <div class="new-temperature" *ngIf="showTemperatureInput">
+    <div class="sensor-info">
+      <div class="temperature">
+        <div class="temperature-label">Mevcut:</div>
+        <span>{{widget.temperature}}°C</span>
+      </div>
+    </div>
+    <div class="sensor-info" style="margin-left: 1rem;">
+      <div class="temperature">
+        <div class="temperature-label">Yeni:</div>
+        <input type="number" [(ngModel)]="newTempValue" />
+        <span>°C</span>
+        <button class="btn btn-primary" style="margin-left: 1rem;" (click)="updateTemperature()">Güncelle</button>
+      </div>
+    </div>
+  </div>
+  
+  <div class="new-temperature" *ngIf="showHumidityInput">
+    <div class="sensor-info">
+      <div class="temperature">
+        <div class="temperature-label">Mevcut:</div>
+        <span>{{widget.humidity}}%</span>
+      </div>
+    </div>
+    <div class="sensor-info" style="margin-left: 1rem;">
+      <div class="temperature">
+        <div class="temperature-label">Yeni:</div>
+        <input type="number" [(ngModel)]="newHumidityValue" />
+        <span>%</span>
+        <button class="btn btn-primary" style="margin-left: 1rem;" (click)="updateHumidity()">Güncelle</button>
+      </div>
+    </div>
+  </div>

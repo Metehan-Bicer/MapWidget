@@ -1,0 +1,23 @@
+<div class="container-fluid h-100 p-0">
+  <div class="row h-100 g-0">
+    <div class="col position-relative">
+      <div id="map"></div>
+    </div>
+    <div class="col-auto widget-sidebar">
+      <div class="search-container">
+        <div class="input-group">
+          <span class="input-group-text">
+            <i class="bi bi-search"></i>
+          </span>
+          <input 
+            type="text" 
+            class="form-control"
+            [(ngModel)]="searchTerm"
+            (input)="searchWidgets($any($event.target).value)"
+            placeholder="Widget ara...">
+        </div>
+      </div>
+      <app-widget-menu [widgets]="filteredWidgets"></app-widget-menu>
+    </div>
+  </div>
+</div>

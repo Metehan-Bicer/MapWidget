@@ -1,0 +1,30 @@
+<div class="widget-info-modal">
+  <div class="modal-header border-0 pb-0">
+    <h5 class="modal-title">{{ widget.name }}</h5>
+    <button type="button" class="btn-close" (click)="activeModal.dismiss()"></button>
+  </div>
+  <div class="modal-body pt-2">
+    <div class="info-grid">
+      <div class="info-item">
+        <div class="info-label">Sıcaklık</div>
+        <div class="info-value">
+          <i class="bi bi-thermometer-half"></i>
+          {{ widget.temperature }}°C
+        </div>
+        <div class="info-status" [class.text-success]="widget.status === 'online'">
+          Sıcaklık {{ widget.status === 'online' ? 'true' : 'false' }}
+        </div>
+      </div>
+      <div class="info-item">
+        <div class="info-label">Nem</div>
+        <div class="info-value">
+          <i class="bi bi-droplet-half"></i>
+          %{{ widget.humidity }}
+        </div>
+        <div class="info-status" [class.text-success]="widget.status === 'online'">
+          Nem {{ widget.status === 'online' ? 'true' : 'false' }}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,24 @@
+<div class="widget-list">
+  <div *ngFor="let widget of widgets" 
+       class="widget-card"
+       [class.online]="widget.status === 'online'"
+       [class.offline]="widget.status === 'offline'">
+    <div class="widget-info">
+      <div class="widget-name">Sıcaklık ve Nem Sensörü</div>
+      <div class="widget-subtitle">{{widget.name}}</div>
+      <div class="sensor-readings">
+        <div class="temperature">
+          <i class="bi bi-thermometer-half"></i>
+          <span>{{widget.temperature}}°C</span>
+        </div>
+        <div class="humidity">
+          <i class="bi bi-droplet-half"></i>
+          <span>%{{widget.humidity}}</span>
+        </div>
+      </div>
+      <div class="last-update">
+        Son güncelleme: {{widget.lastUpdate | date:'HH:mm'}}
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,18 @@
+<div class="adjustment-popup">
+  <h5>{{title}} Ayarla</h5>
+  <div class="values-container">
+    <div class="current-value">
+      <div class="label">Mevcut</div>
+      <div class="value">{{currentValue}}{{unit}}</div>
+    </div>
+    <div class="new-value">
+      <div class="label">Yeni</div>
+      <input type="number" #newValue [value]="currentValue" class="form-control">
+      <span class="unit">{{unit}}</span>
+    </div>
+  </div>
+  <div class="button-group">
+    <button class="btn btn-secondary" (click)="handleCancel()">İptal et</button>
+    <button class="btn btn-primary" (click)="handleSave(newValue.value)">Güncelle</button>
+  </div>
+</div> 

@@ -71,10 +71,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "MapWidget:build:production"
+              "buildTarget": "MapWidget:build:production"
             },
             "development": {
-              "browserTarget": "MapWidget:build:development"
+              "buildTarget": "MapWidget:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -82,7 +82,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "MapWidget:build"
+            "buildTarget": "MapWidget:build"
           }
         },
         "test": {
